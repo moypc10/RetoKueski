@@ -22,11 +22,11 @@ app.prepare()
   .then(() => {
     const server = express()
 
-    server.get('/main', (req, res) => {
+    server.get('*', (req, res) => {
       return handle(req, res)
     })
 
-    server.get("/test", (req, res) => {
+    server.get("/solicitudes", (req, res) => {
       console.log("testtt")
       res.json({ message: "Hello from server side!" });
     })
